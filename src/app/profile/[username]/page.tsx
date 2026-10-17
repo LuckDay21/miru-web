@@ -8,8 +8,6 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { useParams } from "next/navigation";
 import { pb } from "@/lib/pocketbase";
 import { toast } from "sonner";
-import Image from "next/image";
-import CoverImage from "@/assets/cover.png";
 import AnimeLists from "./components/anime-lists";
 import ActivityProgression from "./components/activity-progression";
 import Loading from "@/app/loading";
@@ -107,16 +105,10 @@ function ProfilePage() {
 
   return (
     <>
-      <div className="w-full h-48 md:h-64 lg:h-72 relative">
-        <Image
-          src={CoverImage.src}
-          alt="cover"
-          fill
-          className="object-cover"
-          priority
-          placeholder="blur"
-          blurDataURL={CoverImage.blurDataURL}
-        />
+      <div className="w-full h-48 md:h-64 lg:h-72 relative overflow-hidden bg-gradient-to-r from-slate-950 via-indigo-950/60 to-slate-950 border-b border-white/10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(99,102,241,0.25),rgba(255,255,255,0))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.15),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e1b4b_1px,transparent_1px),linear-gradient(to_bottom,#1e1b4b_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:radial-gradient(ellipse_70%_60%_at_50%_50%,#000_60%,transparent_100%)] opacity-25" />
       </div>
 
       <Container className="min-h-[70vh] mt-10 flex flex-col md:flex-row justify-around gap-8 md:gap-4">
