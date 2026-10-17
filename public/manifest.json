@@ -1,0 +1,38 @@
+{
+  "theme_color": "#0F172A",
+  "background_color": "#0B0F19",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "name": "Miru - Stream Anime with No Ads",
+  "short_name": "Miru",
+  "description": "Watch your favorite anime anywhere, anytime with ease and no ads on Miru",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/miru-logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
