@@ -10,35 +10,39 @@ type Props = {
 };
 
 const FeaturedCollectionCard = (props: Props) => {
-  if (!props.anime || props.anime.length === 0) return null;
+  if (!props.anime || props.anime.length < 3) return null;
+
+  const cardFanStyles = [
+    "absolute z-0 w-28 sm:w-32 md:w-36 -translate-x-14 sm:-translate-x-18 md:-translate-x-20 -rotate-12 transition-all duration-300 hover:scale-105 hover:-rotate-6 hover:-translate-y-3 hover:z-30 shadow-2xl",
+    "relative z-10 w-28 sm:w-32 md:w-36 -rotate-2 -translate-y-2 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:-translate-y-5 hover:z-30 shadow-2xl",
+    "absolute z-0 w-28 sm:w-32 md:w-36 translate-x-14 sm:translate-x-18 md:translate-x-20 rotate-12 transition-all duration-300 hover:scale-105 hover:rotate-6 hover:-translate-y-3 hover:z-30 shadow-2xl",
+  ];
 
   return (
-    <div className="flex flex-col gap-3.5 w-full">
+    <div className="flex flex-col items-center w-full">
       {/* Category Header */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 mb-2">
         <Sparkles className="h-4 w-4 text-indigo-400 shrink-0" />
-        <h3 className="text-base sm:text-lg font-bold text-white tracking-wide">
+        <h3 className="text-base sm:text-lg font-bold text-white tracking-wide text-center">
           {props.title}
         </h3>
       </div>
 
-      {/* 3 Anime Cards Displayed Directly */}
-      <div className="grid grid-cols-3 gap-2.5 sm:gap-3 w-full">
+      {/* Fan Twist Cards (no enclosing box container) */}
+      <div className="relative w-full h-64 sm:h-72 flex items-center justify-center pt-2">
         {props.anime.slice(0, 3).map((item, index) => {
           const title =
             item.title?.english ||
             item.title?.romaji ||
             item.title?.native ||
             "Untitled";
-          const subTitle = item.title?.english ? item.title?.romaji : undefined;
           const poster =
             item.coverImage?.extraLarge || item.coverImage?.large || "";
 
           return (
-            <div key={item.id || index} className="w-full">
+            <div key={item.id || index} className={cardFanStyles[index]}>
               <AnimeCard
                 title={title}
-                subTitle={subTitle}
                 format={item.format}
                 score={item.averageScore}
                 poster={poster}
