@@ -13,9 +13,9 @@ const FeaturedCollectionCard = (props: Props) => {
   if (!props.anime || props.anime.length < 3) return null;
 
   const cardFanStyles = [
-    "absolute z-0 w-28 sm:w-32 md:w-36 -translate-x-14 sm:-translate-x-18 md:-translate-x-20 -rotate-12 transition-all duration-300 hover:scale-105 hover:-rotate-6 hover:-translate-y-3 hover:z-30 shadow-2xl",
-    "relative z-10 w-28 sm:w-32 md:w-36 -rotate-2 -translate-y-2 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:-translate-y-5 hover:z-30 shadow-2xl",
-    "absolute z-0 w-28 sm:w-32 md:w-36 translate-x-14 sm:translate-x-18 md:translate-x-20 rotate-12 transition-all duration-300 hover:scale-105 hover:rotate-6 hover:-translate-y-3 hover:z-30 shadow-2xl",
+    "absolute z-0 w-32 sm:w-36 md:w-36 lg:w-36 xl:w-44 -translate-x-16 sm:-translate-x-18 md:-translate-x-18 lg:-translate-x-18 xl:-translate-x-22 -rotate-12 transition-all duration-300 hover:scale-105 hover:-rotate-6 hover:-translate-y-3 hover:z-30 shadow-2xl",
+    "relative z-10 w-32 sm:w-36 md:w-36 lg:w-36 xl:w-44 -rotate-2 -translate-y-2 transition-all duration-300 hover:scale-105 hover:rotate-0 hover:-translate-y-5 hover:z-30 shadow-2xl",
+    "absolute z-0 w-32 sm:w-36 md:w-36 lg:w-36 xl:w-44 translate-x-16 sm:translate-x-18 md:translate-x-18 lg:translate-x-18 xl:translate-x-22 rotate-12 transition-all duration-300 hover:scale-105 hover:rotate-6 hover:-translate-y-3 hover:z-30 shadow-2xl",
   ];
 
   return (
@@ -29,7 +29,7 @@ const FeaturedCollectionCard = (props: Props) => {
       </div>
 
       {/* Fan Twist Cards (no enclosing box container) */}
-      <div className="relative w-full h-64 sm:h-72 flex items-center justify-center pt-2">
+      <div className="relative w-full h-72 sm:h-80 flex items-center justify-center pt-2">
         {props.anime.slice(0, 3).map((item, index) => {
           const title =
             item.title?.english ||
