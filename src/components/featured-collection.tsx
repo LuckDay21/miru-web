@@ -25,7 +25,7 @@ const FeaturedCollection = ({ featuredAnime, loading }: Props) => {
         </h2>
       </div>
 
-      <div className="grid w-full gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full gap-6 lg:gap-6 xl:gap-8 grid-cols-1 lg:grid-cols-3">
         {featuredAnime.map((category, idx) => (
           <FeaturedCollectionCard
             title={category.title}
@@ -45,12 +45,19 @@ const LoadingSkeleton = () => {
         <div className="w-1.5 h-6 rounded-full bg-slate-800 shrink-0" />
         <div className="h-7 w-48 rounded-lg bg-slate-800/80 animate-pulse" />
       </div>
-      <div className="grid w-full gap-5 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {[1, 2, 3].map((idx) => (
-          <div
-            key={idx}
-            className="rounded-2xl h-[20rem] w-full bg-slate-900/60 border border-white/5 animate-pulse"
-          />
+      <div className="grid w-full gap-6 lg:gap-6 xl:gap-8 grid-cols-1 lg:grid-cols-3">
+        {[1, 2, 3].map((colIdx) => (
+          <div key={colIdx} className="flex flex-col gap-3.5 w-full">
+            <div className="h-5 w-36 rounded bg-slate-800/80 animate-pulse" />
+            <div className="grid grid-cols-3 gap-3 w-full">
+              {[1, 2, 3].map((cardIdx) => (
+                <div
+                  key={cardIdx}
+                  className="aspect-[3/4.2] w-full rounded-2xl bg-slate-900/60 border border-white/5 animate-pulse"
+                />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </Container>

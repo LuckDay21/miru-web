@@ -56,7 +56,7 @@ const HeroSection = ({ spotlightAnime, isDataLoading }: IHeroSectionProps) => {
       <div className="absolute right-4 md:right-12 bottom-8 z-30 flex items-center gap-4">
         {/* Thumbnail Preview Strip (visible on md+) */}
         <div className="hidden lg:flex items-center gap-2 p-1.5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10">
-          {spotlightAnime.slice(0, 5).map((anime, idx) => {
+          {spotlightAnime.slice(0, 6).map((anime, idx) => {
             const thumb =
               anime.coverImage?.large ||
               anime.coverImage?.extraLarge ||

@@ -43,15 +43,15 @@ export default function Home() {
   // Store first 3 records into dedicated variables so pagination page changes in other sections don't re-trigger FeaturedCollection
   const featuredFavoriteList = useMemo(
     () => popularList.slice(0, 3),
-    [popularList.length > 0 ? popularList[0]?.id : null],
+    [popularList],
   );
   const featuredPopularList = useMemo(
     () => popularList.slice(3, 6),
-    [popularList.length > 0 ? popularList[0]?.id : null],
+    [popularList],
   );
   const featuredRecentList = useMemo(
     () => recentList.slice(0, 3),
-    [recentList.length > 0 ? recentList[0]?.id : null],
+    [recentList],
   );
 
   return (

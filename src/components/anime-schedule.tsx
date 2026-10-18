@@ -74,7 +74,7 @@ function AnimeSchedule() {
         className="w-full flex flex-col lg:flex-row gap-6"
       >
         {/* Days of Week Tab Rail */}
-        <TabsList className="flex flex-row lg:flex-col justify-start items-stretch gap-1.5 w-full lg:w-56 shrink-0 h-auto p-1.5 bg-[#0d121d] border border-white/10 rounded-2xl overflow-x-auto no-scrollbar">
+        <TabsList className="flex flex-row lg:flex-col justify-start items-stretch gap-1.5 w-full lg:w-56 shrink-0 h-full p-1.5 bg-[#0d121d] border border-white/10 rounded-2xl overflow-x-auto no-scrollbar">
           {daysOfWeek.map((day) => {
             const dateObj = getDateForWeekday(day);
             const isToday = day === currentDay;
